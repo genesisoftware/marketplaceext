@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Webkul\Marketplace\Controller\Account\EditprofilePost">
+        <plugin name="editprofilepost" type="Genesisoft\MarketplaceExt\Plugin\Controller\Account\EditprofilePost"/>
+    </type>
+    <type name="Webkul\Marketplace\Model\Layer\Filter\Seller">
+        <plugin name="editprofilepost" type="Genesisoft\MarketplaceExt\Plugin\Model\Layer\Filter\Seller"/>
+    </type>
+
+    <type name="Webkul\Marketplace\Helper\Email">
+        <plugin name="sendemail" type="Genesisoft\MarketplaceExt\Plugin\Helper\Email"/>
+    </type>
+
+    <type name="Magento\Framework\Search\Adapter\Mysql\Adapter">
+        <plugin name="Webkul_Marketplace::aroundQuery" disabled="true"/>
+    </type>
+
+    <type name="Magento\Framework\Search\Adapter\Mysql\Adapter">
+        <plugin name="Jn2_MarketplaceExt::aroundQuery" type="Genesisoft\MarketplaceExt\Plugin\Framework\Search\Adapter\Mysql\Adapter"/>
+    </type>
+
+    <type name="Webkul\Marketplace\Block\Product\Create">
+        <plugin name="setfields" type="Genesisoft\MarketplaceExt\Plugin\Block\Product\CreateSetFieldsValue"/>
+        <plugin name="persistentdata" type="Genesisoft\MarketplaceExt\Plugin\Block\Product\CreateGetPersistentData"/>
+    </type>
+
+    <preference for="Webkul\Marketplace\Observer\SalesOrderPlaceAfterObserver" type="Genesisoft\MarketplaceExt\Preference\Webkul\Marketplace\Observer\SalesOrderPlaceAfterObserver" />
+    <preference for="Magento\Elasticsearch\Model\ResourceModel\Fulltext\Collection\SearchResultApplier" type="Genesisoft\MarketplaceExt\Preference\Magento\Elasticsearch\Model\ResourceModel\Fulltext\Collection\SearchResultApplier" />
+</config>

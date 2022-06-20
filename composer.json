@@ -1,0 +1,20 @@
+{
+    "name": "genesisoft/marketplaceext",
+    "description": "Webkul Marketplace Extension",
+    "require": {
+	    "webkul/module-marketplace": "2.2.*"
+
+    },
+    "type": "magento2-module",
+    "license": [
+        "proprietary"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Genesisoft\\MarketplaceExt\\": ""
+        }
+    }
+}

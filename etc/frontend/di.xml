@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="\Magento\Customer\Controller\Account\LoginPost">
+        <plugin name="mp_sellerloginpost" type="\Genesisoft\MarketplaceExt\Plugin\Controller\Account\LoginPost" sortOrder="1" />
+    </type>
+    <preference for="Webkul\Marketplace\Controller\Product\Add" type="Genesisoft\MarketplaceExt\Preference\Webkul\Marketplace\Controller\Product\Add" />
+    <preference for="Webkul\Marketplace\Controller\Catalog\View" type="Genesisoft\MarketplaceExt\Preference\Webkul\Marketplace\Controller\Catalog\View" />
+</config>

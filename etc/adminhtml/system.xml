@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="marketplace">
+            <group id="sold_by_options" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>"Sold By" Options</label>
+                <field id="sold_by" translate="label comment" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Use "Product Sold By" before Seller Name on Product Page Header</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="general_settings" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="seller_contact" translate="label comment" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Use admin email in seller contact form</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="group_cart_by_seller" translate="label comment" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Group Cart By Seller</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="customerlogin" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Customer Login</label>
+                <field id="redirect_customer_enable" translate="label comment" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Redirect Customer To Specific Page After Login</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="redirect_customer_page" translate="label comment" sortOrder="1" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Redirect Page</label>
+                    <comment>Page that the customer will be redirected to.</comment>
+                </field>
+            </group>
+            <group id="landingpage_settings" translate="label" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="bannerLayout2" translate="label" type="image" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Banner Image</label>
+                    <comment>Allowed file types: jpg, jpeg, gif, png. Recommended image size: 1500x600 px</comment>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media" scope_info="1">marketplace/banner</base_url>
+                    <upload_dir config="system/filesystem/media">marketplace/banner</upload_dir>
+                    <depends>
+                        <field id="pageLayout">2</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
